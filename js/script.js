@@ -1,7 +1,5 @@
 $(document).ready(function(){
-	$('.buttonBookmark').click(function(e) {
-	  loadTemplate(e);
-	})
+	createiFrame(e);
 
 	$('.closeMe').click(function(e) {
 	  e.preventDefault();
@@ -12,7 +10,7 @@ $(document).ready(function(){
 	  e.preventDefault();
 	  var element = document.createElement('iframe');
 	  $('body').append(element);
-	  $('iframe').attr('src', 'http://www.shortdiv.com');
+	  $('iframe').load('https://http://www.nytimes.com', function(){closeIframe(e)});
 	}
 
 	function loadTemplate(e){
