@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('.buttonBookmark').click(function(e) {
-    loadTemplate(e);
+    createiFrame(e);
     });
 
 	$('.closeMe').click(function(e) {
@@ -11,7 +11,7 @@ $(document).ready(function(){
 	function createiFrame(e) {
 	  e.preventDefault();
 	  var element = document.createElement('iframe');
-	  element.src = 'http://knightlab.northwestern.edu/projects/'
+	  element.src = '/template.html'
 	  document.body.appendChild(element);
 	  closeIframe();
 	}

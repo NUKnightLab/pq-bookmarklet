@@ -1,0 +1,49 @@
+html, body {
+  height: 100% !important;
+}
+
+/*JS injected styles for iframe*/
+iframe {
+  height: 100% !important;
+  width: 100%;
+  border: none;
+  background-color: black;
+  opacity: 0.8;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  right: 0px;
+}
+
+.images {
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 4em;
+}
+
+.pqImage {
+  width: 48%;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  padding-bottom: 1em;
+  overflow: hidden;
+}
+
+.pqImage:nth-child(2n) {
+  margin-left:1em;
+}
+
+.closeButton {
+  border: none;
+  background: none;
+  font-size: 3em;
+  right: 0.5em;
+  position: absolute;
+  color: grey;
+  opacity: 0.9;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+}
