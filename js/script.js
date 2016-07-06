@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	createiFrame(e);
+    $('.buttonBookmark').click(function(e) {
+    loadTemplate(e);
+    });
 
 	$('.closeMe').click(function(e) {
 	  e.preventDefault();
@@ -17,8 +19,13 @@ $(document).ready(function(){
 	function loadTemplate(e){
 	  e.preventDefault();
 	  var element = document.createElement('div');
-	  $('body').append(element);
-	  $(element).load('/template.html', function(){closeIframe(e)});
+	  document.body.appendChild(element);
+	  var xhr = new XMLHttpRequest();
+	  xhr.onload = function() {
+	    element.innerHTML = this.response;
+	  };
+	  xhr.open("GET", '/template.html');
+	  xhr.send();
 	}
 
 	function closeIframe() {
@@ -27,4 +34,4 @@ $(document).ready(function(){
 		  $('.bookmarklet').remove();
 		});
 	};
-})();
+});
