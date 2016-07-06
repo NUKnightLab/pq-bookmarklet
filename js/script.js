@@ -9,8 +9,9 @@ $(document).ready(function(){
 	function createiFrame(e) {
 	  e.preventDefault();
 	  var element = document.createElement('iframe');
-	  $('body').append(element);
-	  $('iframe').load('https://http://www.nytimes.com', function(){closeIframe(e)});
+	  element.src = 'http://knightlab.northwestern.edu/projects/'
+	  document.body.appendChild(element);
+	  closeIframe();
 	}
 
 	function loadTemplate(e){
@@ -20,10 +21,10 @@ $(document).ready(function(){
 	  $(element).load('/template.html', function(){closeIframe(e)});
 	}
 
-	function closeIframe(e) {
+	function closeIframe() {
 	  $('.closeMe').on('click', function(e) {
 		  e.preventDefault();
 		  $('.bookmarklet').remove();
 		});
 	};
-});
+})();
