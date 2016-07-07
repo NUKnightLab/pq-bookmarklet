@@ -1,5 +1,6 @@
 html, body {
   height: 100% !important;
+  margin: 0;
 }
 
 /*JS injected styles for iframe*/
@@ -7,8 +8,6 @@ iframe {
   height: 100% !important;
   width: 100%;
   border: none;
-  background-color: black;
-  opacity: 0.8;
   padding: 0;
   margin: 0;
   top: 0;
@@ -27,14 +26,19 @@ iframe {
   position: relative;
   vertical-align: top;
   padding-bottom: 1em;
-  overflow: hidden;
 }
 
 .pqImage:nth-child(2n) {
   margin-left:1em;
 }
 
+img{
+  width: 100%;
+  height: auto;
+}
+
 .closeButton {
+  display: none; 
   border: none;
   background: none;
   font-size: 3em;
@@ -42,8 +46,18 @@ iframe {
   position: absolute;
   color: grey;
   opacity: 0.9;
+  z-index: 300;
 }
 
 .closeButton:hover {
   cursor: pointer;
 }
+
+.backdrop{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.8;
+}
+
