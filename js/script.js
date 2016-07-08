@@ -1,34 +1,20 @@
-$(document).ready(function(){
+function iFrame() {
+  var iframe, closeButton, backDrop
 
-    $('.buttonBookmark').click(function(e) {
-    createiFrame(e);
-    closeIframe();
-    $('.closeButton').css({
-    	'display': 'block'
-    })
-    });
+  function init() {
+    bookMarklet = document.createElement('div');
+    bookMarklet.className = 'bookMarklet';
+    bookMarklet.innerHTML = "<button class='closeButton' onclick='iFrame().closeiFrame()'></button><iframe src='/template.html'></iframe><div class='backdrop'></div>"
 
-	function createiFrame(e) {
-	  e.preventDefault();
-	  var element = document.createElement('iframe');
-	  element.src = '/template.html'
-	  document.body.appendChild(element);
-	  styleiFrame(element);
-	}
+    document.body.appendChild(bookMarklet);
+  }
 
-	function styleiFrame(el) {
-		el.style.width = '100%';
-		el.style.height = '100%';
-		el.style.border = 'none';
-	}
+  function closeiFrame() {
+    document.body.removeChild(bookMarklet)
+  }
 
-	function closeIframe() {
-	  $('.closeButton').on('click', function(e) {
-		  e.preventDefault();
-		  $('iframe').remove();
-		  $('.closeButton').css({
-    	  'display': 'none'
-          })
-		});
-	};
-});
+  return {
+    init: init,
+    closeiFrame: closeiFrame
+  }
+}

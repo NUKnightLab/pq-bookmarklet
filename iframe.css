@@ -5,13 +5,15 @@ html, body {
 
 /*JS injected styles for iframe*/
 iframe {
-  height: 100% !important;
+  position: absolute;
+  height: 100%;
   width: 100%;
   border: none;
   padding: 0;
   margin: 0;
   top: 0;
   right: 0px;
+  z-index: 100;
 }
 
 .images {
@@ -38,15 +40,20 @@ img{
 }
 
 .closeButton {
-  display: none; 
+  display: block;
   border: none;
+  padding: 0.5em;
   background: none;
   font-size: 3em;
   right: 0.5em;
   position: absolute;
-  color: grey;
-  opacity: 0.9;
   z-index: 300;
+}
+
+.closeButton::after {
+  content: '\2715';
+  font-size: 0.7em;
+  color: grey;
 }
 
 .closeButton:hover {
@@ -55,9 +62,13 @@ img{
 
 .backdrop{
   position: fixed;
-  height: 100%;
-  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
   background-color: black;
   opacity: 0.8;
+  z-index: 10;
 }
 
