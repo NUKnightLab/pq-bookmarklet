@@ -7,11 +7,14 @@ function iFrame() {
     bookMarklet.innerHTML = "<button class='closeButton' onclick='iFrame().closeiFrame()'></button><iframe src='/template.html'></iframe><div class='backdrop'></div>"
     
     document.body.appendChild(bookMarklet);
+    
+    var event = new CustomEvent("keydown");
     window.addEventListener("keydown", function() {
       event.stopPropagation();
       debugger;
     }, false)
 
+    window.onkeypress = window.dispatchEvent(event);
   }
 
   function closeiFrame() {
